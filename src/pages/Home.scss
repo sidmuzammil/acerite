@@ -1,0 +1,68 @@
+@import '../styles/abstracts/variables';
+@import '../styles/abstracts/mixins';
+
+.home {
+  padding-top: calc(60px + $spacing-lg);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: $spacing-md 0;
+
+  &__title {
+    margin-bottom: $spacing-md;
+  }
+
+  &__text {
+    font-size: 1.1rem;
+    color: lighten($text-color, 20%);
+    margin-bottom: $spacing-lg;
+
+    @include respond-to(md) {
+      font-size: 1.25rem;
+    }
+  }
+}
+
+.subscription {
+  margin-top: $spacing-lg;
+
+  &__label {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: $spacing-sm;
+  }
+
+  &__form {
+    @include flex(column, center, stretch);
+    gap: $spacing-xs;
+    max-width: 500px;
+    margin: 0 auto;
+
+    @include respond-to(md) {
+      flex-direction: row;
+    }
+  }
+
+  &__input {
+    flex: 1;
+    padding: $spacing-sm;
+    border: 1px solid #ddd;
+    border-radius: $border-radius;
+    font-size: 1rem;
+
+    &:focus {
+      outline: none;
+      border-color: $primary-color;
+    }
+  }
+
+  &__button {
+    padding: $spacing-sm $spacing-md;
+  }
+}

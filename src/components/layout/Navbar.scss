@@ -1,0 +1,47 @@
+@import '../../styles/abstracts/variables';
+@import '../../styles/abstracts/mixins';
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: $background-color;
+  box-shadow: $box-shadow;
+  padding: $spacing-sm 0;
+  z-index: 1000;
+
+  .container {
+    @include flex(row, center, center);
+
+    @include respond-to(md) {
+      justify-content: space-between;
+    }
+  }
+
+  &__logo {
+    font-size: 1.5rem;
+    font-weight: $font-weight-bold;
+    color: $text-color;
+  }
+
+  &__menu {
+    display: none;
+
+    @include respond-to(md) {
+      @include flex(row, flex-end, center);
+      gap: $spacing-md;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $text-color;
+    font-weight: 500;
+    transition: $transition-base;
+
+    &:hover, &--active {
+      color: $primary-color;
+    }
+  }
+}

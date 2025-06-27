@@ -1,0 +1,28 @@
+.form-group {
+  margin-bottom: $spacing-md;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: $spacing-xs;
+  font-weight: 500;
+}
+
+.form-control {
+  width: 100%;
+  padding: $spacing-sm;
+  border: 1px solid #ddd;
+  border-radius: $border-radius;
+  transition: $transition-base;
+  
+  &:focus {
+    border-color: $primary-color;
+    box-shadow: 0 0 0 2px rgba($primary-color, 0.2);
+  }
+}
+
+.form-error {
+  color: red;
+  font-size: 0.875rem;
+  margin-top: $spacing-xs;
+}
